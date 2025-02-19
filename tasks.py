@@ -71,12 +71,9 @@ class TaskManager:
             task.complete()
 
 
-# Пример использования
 if __name__ == "__main__":
-    # Создаем менеджер задач
     manager = TaskManager()
 
-    # Добавляем несколько задач
     manager.add_task(
         "Обновить базу данных",
         "Выполнить миграции базы данных",
@@ -88,10 +85,8 @@ if __name__ == "__main__":
         priority=2
     )
 
-    # Добавляем callback для задачи
     task = manager.get_task("Отправить отчет")
     if task:
         task.add_callback(lambda t: print(f"Задача '{t.name}' завершена!"))
 
-    # Запускаем асинхронную обработку задач
     asyncio.run(manager.process_tasks())
