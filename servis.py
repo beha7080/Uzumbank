@@ -56,3 +56,4 @@ if __name__ == "__main__":
 
     # Останавливаем сервис
     my_service.stop()
+    #my_server
